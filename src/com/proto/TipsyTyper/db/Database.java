@@ -101,8 +101,8 @@ public abstract class Database {
         PreparedStatement ps = null;
         try {
             conn = getSQLConnection();
-            ps = conn.prepareStatement("REPLACE INTO " + table + " (num,player,time) VALUES(?,?,?)"); // IMPORTANT. In SQLite class, We made 3 colums. player, Kills, Total.
-            ps.setString(2, player.getName().toLowerCase());                                             // YOU MUST put these into this line!! And depending on how many
+            ps = conn.prepareStatement("REPLACE INTO " + table + " (num,player,time) VALUES(?,?,?)");
+            ps.setString(2, player.getName().toLowerCase());                                           
             ps.setInt(1, num);
             ps.setLong(3, time);
             ps.executeUpdate();
